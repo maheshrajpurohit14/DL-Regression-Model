@@ -126,16 +126,31 @@ print(f"\nPrediction for x = 120 : {y_new_pred:.8f}")
 
 ```
 
-### Dataset Information
-Include screenshot of the generated data
 
 ### OUTPUT
-Training Loss Vs Iteration Plot
-Best Fit line plot
-Include your plot here
+### Dataset Information
+<img width="604" height="458" alt="image" src="https://github.com/user-attachments/assets/c27233e6-5296-40e9-bf6e-2026440c8cc3" />
+
+## Training Loss Vs Iteration Plot
+<img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/63aed523-db6e-4737-9995-4c4e82d76be3" />
+<img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/c9a5bb50-c50d-41a8-8937-047967648877" />
+<img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/d94809b9-9d20-48ae-a56e-743e769c71b1" />
+
+## Best Fit line plot
+<img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/37172446-6691-46f5-a7bb-b1d3333436b3" />
+
+## Final weight & Bias:
+<img width="800" height="122" alt="Screenshot 2025-08-26 132341" src="https://github.com/user-attachments/assets/25a3d919-2293-4a75-b7d7-4d8c2bc3ccea" />
+
+
+## Best Fit line plot
+<img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/e558002d-fbc3-41f5-bb91-32fa3d20d02f" />
+
 
 ### New Sample Data Prediction
-Include your sample input and output here
+<img width="346" height="77" alt="image" src="https://github.com/user-attachments/assets/24bb63e7-7bbf-4f57-815a-9fe8c09be69d" />
+
+
 
 ## RESULT
 Thus, a neural network regression model was successfully developed and trained using PyTorch.

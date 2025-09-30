@@ -140,7 +140,8 @@ print(f"\nPrediction for x = 120 : {y_new_pred:.8f}")
 <img width="850" height="850" alt="image" src="https://github.com/user-attachments/assets/37172446-6691-46f5-a7bb-b1d3333436b3" />
 
 ## Final weight & Bias:
-<img width="800" height="122" alt="Screenshot 2025-08-26 132341" src="https://github.com/user-attachments/assets/25a3d919-2293-4a75-b7d7-4d8c2bc3ccea" />
+<img width="406" height="77" alt="image" src="https://github.com/user-attachments/assets/10ee4b46-f99e-4711-bb43-8608648a2d8e" />
+
 
 
 ## Best Fit line plot

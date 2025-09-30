@@ -40,19 +40,89 @@ Use the trained model to predict  for a new input value .
 
 ## PROGRAM
 
-### Name:
+### Name: Mahesh Raj Purohit
 
-### Register Number:
+### Register Number: 212222240058
 
 ```python
+import torch
+import torch.nn as nn
+import matplotlib.pyplot as plt
+
+
+torch.manual_seed(71)
+X=torch.linspace(1,50,50).reshape(-1,1)
+e=torch.randint(-8,9,(50,1),dtype=torch.float)
+y=2*X+1+e
+
+
+plt.scatter(X,y,color='red')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Generated Data for Linear Regression')
+plt.show()
+
 class Model(nn.Module):
-    def __init__(self, in_features, out_features):
-        super().__init__()
-        #Include your code here
+  def __init__(self,in_features,out_features):
+    super().__init__()
+    self.linear=nn.Linear(in_features,out_features)
+
+  def forward(self,x):
+    return self.linear(x)
+torch.manual_seed(59)
+model=Model(1,1)
+initial_weight=model.linear.weight.item()
+initial_bias=model.linear.bias.item()
+
+print(f"Initial Weight: {initial_weight:.8f},Initial Bias: {initial_bias:.8f}\n")
 
 
+loss_function=nn.MSELoss()
+optimizer=torch.optim.SGD(model.parameters(),lr=0.001)
+epochs=100
+losses=[]
+for epoch in range(1,epochs+1):
+  optimizer.zero_grad()
+  y_pred=model(X)
+  loss=loss_function(y_pred,y)
+  losses.append(loss.item())
+  loss.backward()
+  optimizer.step()
+  print(f"epoch: {epoch:2} loss: {loss.item():10.8f}"
+         f"weight: {model.linear.weight.item():10.8f}"
+         f"bias: {model.linear.bias.item():10.8f}")
 
-# Initialize the Model, Loss Function, and Optimizer
+
+plt.plot(range(epochs),losses,color="Blue")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.title("Loss Curve")
+plt.show()
+
+
+final_weight=model.linear.weight.item()
+final_bias=model.linear.bias.item()
+print("\nName : Kanagavel A K")
+print("Register No : 212223230096")
+print(f"\nFinal Weight : {final_weight:.8f}, Final Bias : {final_bias:.8f}")
+
+
+x1=torch.tensor([X.min().item(),X.max().item()])
+y1=x1*final_weight+final_bias
+
+plt.scatter(X,y,label="Original Data")
+plt.plot(x1,y1,'r',label="Best=Fit line")
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Trained Model: Best-Fit Line')
+plt.legend()
+plt.show()
+
+
+x_new=torch.tensor([[120.0]])
+y_new_pred=model(x_new).item()
+
+print(f"\nPrediction for x = 120 : {y_new_pred:.8f}")
 
 ```
 
